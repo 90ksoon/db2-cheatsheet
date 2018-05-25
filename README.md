@@ -30,6 +30,22 @@ ___
 ### Run Stats
 `RUNSTATES ON TABLE table FOR INDEXES ALL` to run stats for all indexes
 
+### Terminal Commands
+
+`db2 list db directory` list database catalog info
+
+`db2 list applications` list all connecting clients
+
+`db2 force application all` force all application
+
+`db2 backup db DATABASE_ALIAS to DIRECTORY_PATH compress ` backup to DIR with compress option
+
+`db2 deactivate database` deactivates the db
+
+`db2 connect reset` reset the connection
+
+
+
 ### _Syntax_
 
 ##### Create Table
