@@ -17,6 +17,8 @@ ___
 ### Functions
 `SYSCAT.FUNCTIONS` query functions
 
+`CALL SYSPROC.ADMIN_REVALIDATE_DB_OBJECTS('procedure or function', 'schema', 'name');` revalidate the object
+
 ### Sequences
 `SYSCAT.SEQUENCES` info on sequence
 
@@ -57,7 +59,6 @@ ___
 `db2 force application all` force all application
 
 `db2ckbkp -t DATABASE_FILE` check backup integrity
-
 
 `db2 -tvmf filename.sql |tee filename.sql.out`
 - **t** indicate statements are terminated with delimiter
