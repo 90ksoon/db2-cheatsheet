@@ -69,6 +69,8 @@ ___
 `db2 -td@ -vmf filename.sql >> filename.sql.out`
  - **d** delimiter specifier
 
+ `db2 -d <database> -z <schema> -t <tablename> -e -o <filename>` extract table DDL script
+
 ### _Syntax_
 
 ##### Create Table
@@ -81,7 +83,12 @@ CREATE TABLE (
   )
 
 CREATE TABLE newtable AS ( SELECT * FROM oldtable ) WITH NO DATA;
+
+RENAME TABLE schema.table TO newtable;
 ```
+
+##### Check DB2 Version
+`SELECT * FROM TABLE (SYSPROC.env_get_inst_info())`
 
 ##### Insert Values
 ```sql
@@ -96,6 +103,24 @@ ALTER TABLE table
 ADD COLUMN column_name datatype
 ADD COLUMN column_name datatype
 ADD COLUMN column_name datatype;
+
+ALTER TABLE table ADD COLUMN column datatype
+
+ALTER TABLE table ALTER COLUMN column SET DEFAULT defaultvalue;
+
+ALTER TABLE table ALTER COLUMN column SET NOT NULL;
+
+ALTER TABLE table RENAME COLUMN oldcol TO newcol;
+
+ALTER TABLE table DROP PRIMARY KEY;
+
+ALTER TABLE table ADD PRIMARY KEY (col, col2);
+
+DROP INDEX indexname;
+
+CREATE UNIQUE INDEX indexname ON schema.table(col, col2);
+
+
 ```
 
 
